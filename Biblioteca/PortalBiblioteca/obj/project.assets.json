@@ -12944,11 +12944,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ialima\\source\\repos\\Biblioteca\\PortalBiblioteca\\PortalBiblioteca.csproj",
+      "projectUniqueName": "C:\\Users\\ialima\\Source\\Repos\\PortalBiblioteca\\Biblioteca\\PortalBiblioteca\\PortalBiblioteca.csproj",
       "projectName": "PortalBiblioteca",
-      "projectPath": "C:\\Users\\ialima\\source\\repos\\Biblioteca\\PortalBiblioteca\\PortalBiblioteca.csproj",
+      "projectPath": "C:\\Users\\ialima\\Source\\Repos\\PortalBiblioteca\\Biblioteca\\PortalBiblioteca\\PortalBiblioteca.csproj",
       "packagesPath": "C:\\Users\\ialima\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ialima\\source\\repos\\Biblioteca\\PortalBiblioteca\\obj\\",
+      "outputPath": "C:\\Users\\ialima\\Source\\Repos\\PortalBiblioteca\\Biblioteca\\PortalBiblioteca\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

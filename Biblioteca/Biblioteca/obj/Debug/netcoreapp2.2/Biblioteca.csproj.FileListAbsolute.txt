@@ -1,0 +1,16 @@
+C:\Users\ialima\source\repos\Biblioteca\Biblioteca\bin\Debug\netcoreapp2.2\Biblioteca.deps.json
+C:\Users\ialima\source\repos\Biblioteca\Biblioteca\bin\Debug\netcoreapp2.2\Biblioteca.runtimeconfig.json
+C:\Users\ialima\source\repos\Biblioteca\Biblioteca\bin\Debug\netcoreapp2.2\Biblioteca.runtimeconfig.dev.json
+C:\Users\ialima\source\repos\Biblioteca\Biblioteca\bin\Debug\netcoreapp2.2\Biblioteca.dll
+C:\Users\ialima\source\repos\Biblioteca\Biblioteca\obj\Debug\netcoreapp2.2\Biblioteca.csprojAssemblyReference.cache
+C:\Users\ialima\source\repos\Biblioteca\Biblioteca\obj\Debug\netcoreapp2.2\Biblioteca.RazorAssemblyInfo.cache
+C:\Users\ialima\source\repos\Biblioteca\Biblioteca\obj\Debug\netcoreapp2.2\Biblioteca.RazorAssemblyInfo.cs
+C:\Users\ialima\source\repos\Biblioteca\Biblioteca\obj\Debug\netcoreapp2.2\Biblioteca.AssemblyInfoInputs.cache
+C:\Users\ialima\source\repos\Biblioteca\Biblioteca\obj\Debug\netcoreapp2.2\Biblioteca.AssemblyInfo.cs
+C:\Users\ialima\source\repos\Biblioteca\Biblioteca\obj\Debug\netcoreapp2.2\Biblioteca.RazorTargetAssemblyInfo.cache
+C:\Users\ialima\source\repos\Biblioteca\Biblioteca\bin\Debug\netcoreapp2.2\Biblioteca.pdb
+C:\Users\ialima\source\repos\Biblioteca\Biblioteca\obj\Debug\netcoreapp2.2\Biblioteca.dll
+C:\Users\ialima\source\repos\Biblioteca\Biblioteca\obj\Debug\netcoreapp2.2\Biblioteca.pdb
+C:\Users\ialima\source\repos\Biblioteca\Biblioteca\bin\Debug\netcoreapp2.2\appsettings.Development.json
+C:\Users\ialima\source\repos\Biblioteca\Biblioteca\bin\Debug\netcoreapp2.2\appsettings.json
+C:\Users\ialima\source\repos\Biblioteca\Biblioteca\bin\Debug\netcoreapp2.2\Properties\launchSettings.json

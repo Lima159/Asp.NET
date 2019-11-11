@@ -1,0 +1,41 @@
+﻿@using PortalBiblioteca.Models
+
+@{
+    ViewData["Title"] = "Index";
+}
+@{
+    var editora = ViewBag.Message;
+}
+<h1>Index</h1>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Nome</th>
+    </tr>
+    <tr>
+        <td>@editora.Id</td>
+        <td>@editora.Nome</td>
+    </tr>
+</table>
+
+<style>
+    table, td, th {
+        border: 1px solid black;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th {
+        background-color: #6699ff;
+        color: white;
+        text-align: left;
+    }
+
+    tr:hover {
+        background-color: #a6a6a6;
+    }
+</style>

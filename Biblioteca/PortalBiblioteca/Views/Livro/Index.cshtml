@@ -1,0 +1,60 @@
+﻿@using PortalBiblioteca.Models
+
+@{
+    ViewData["Title"] = "Index";
+}
+@{
+    var livros = ViewBag.Message;
+}
+<h1>Index</h1>
+
+<a asp-action="Create">Nova Entrada</a>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Titulo</th>
+        <th>Numero de Paginas</th>
+        <th>Autor</th>
+        <th>Editora</th>
+        <th>Genero</th>
+        <th>Ações</th>
+    </tr>
+    @for (int i = 0; i < livros.Count; i++)
+    {
+        <tr>
+            <td>@livros[i].Id</td>
+            <td>@livros[i].Titulo</td>
+            <td>@livros[i].NumeroPaginas</td>
+            <td>@livros[i].AutorId</td>
+            <td>@livros[i].EditoraId</td>
+            <td>@livros[i].GeneroId</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@livros[i].Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@livros[i]">Details</a> |
+                <a asp-action="Delete" asp-route-id="@livros[i].Id">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+
+<style>
+    table, td, th {
+        border: 1px solid black;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th {
+        background-color: #6699ff;
+        color: white;
+        text-align: left;
+    }
+
+    tr:hover {
+        background-color: #a6a6a6;
+    }
+</style>

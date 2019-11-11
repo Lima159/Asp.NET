@@ -1,0 +1,50 @@
+﻿@using PortalBiblioteca.Models
+
+@{
+    ViewData["Title"] = "Index";
+}
+@{
+    var autores = ViewBag.Message;
+}
+<h1>Index</h1>
+
+<a asp-action="Create">Nova Entrada</a>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Ações</th>
+    </tr>
+    @for (int i = 0; i < autores.Count; i++)
+    {
+        <tr>
+            <td>@autores[i].Id</td>
+            <td>@autores[i].Nome</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@autores[i].Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@autores[i]">Details</a> |
+                <a asp-action="Delete" asp-route-id="@autores[i].Id">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+
+<style>
+    table, td, th {
+      border: 1px solid black;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th {
+      background-color: #6699ff;
+      color: white;
+      text-align: left;
+    }
+    tr:hover {background-color: #a6a6a6;}
+
+</style>

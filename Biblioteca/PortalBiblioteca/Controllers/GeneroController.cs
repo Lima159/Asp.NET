@@ -38,6 +38,13 @@ namespace PortalBiblioteca.Controllers
             return View();
         }
 
+        public async Task<IActionResult> Detail(string id)
+        {
+            var generoDyn = await _service.Get<Genero>(Api.Genero.ListarGenero + id);
+            ViewBag.Message = generoDyn;
+            return View();
+        }
+
         public async Task<IActionResult> Create(Genero obj)
         {
             try
@@ -74,6 +81,12 @@ namespace PortalBiblioteca.Controllers
             {
                 return BadRequest($"{e.Message} - {e.InnerException}");
             }
+        }
+
+        public async Task<IActionResult> Delete(string id)
+        {
+            await _service.Delete(Api.Genero.DeletarGenero + id);
+            return RedirectToAction("Index");
         }
 
         public IActionResult Error()

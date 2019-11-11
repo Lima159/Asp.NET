@@ -1,0 +1,49 @@
+﻿@using PortalBiblioteca.Models
+
+@{
+    ViewData["Title"] = "Index";
+}
+@{
+    var emprestimo = ViewBag.Message;
+}
+<h1>Index</h1>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Livro</th>
+        <th>Leitor</th>
+        <th>Data Emprestimo</th>
+        <th>Data Expiracao</th>
+        <th>Data Devolucao</th>
+    </tr>
+    <tr>
+        <td>@emprestimo.Id</td>
+        <td>@emprestimo.LivroId</td>
+        <td>@emprestimo.LeitorId</td>
+        <td>@emprestimo.Data_Emprestimo</td>
+        <td>@emprestimo.Data_Expiracao</td>
+        <td>@emprestimo.Data_Devolucao</td>
+    </tr>
+</table>
+
+<style>
+    table, td, th {
+        border: 1px solid black;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th {
+        background-color: #6699ff;
+        color: white;
+        text-align: left;
+    }
+
+    tr:hover {
+        background-color: #a6a6a6;
+    }
+</style>

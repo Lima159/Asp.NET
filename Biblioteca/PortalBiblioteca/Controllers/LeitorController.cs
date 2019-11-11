@@ -37,6 +37,13 @@ namespace PortalBiblioteca.Controllers
             return View();
         }
 
+        public async Task<IActionResult> Detail(string id)
+        {
+            var leitorDyn = await _service.Get<Leitor>(Api.Leitor.ListarLeitor + id);
+            ViewBag.Message = leitorDyn;
+            return View();
+        }
+
         public async Task<IActionResult> Create(Leitor obj)
         {
             try
@@ -77,6 +84,12 @@ namespace PortalBiblioteca.Controllers
             {
                 return BadRequest($"{e.Message} - {e.InnerException}");
             }
+        }
+
+        public async Task<IActionResult> Delete(string id)
+        {
+            await _service.Delete(Api.Leitor.DeletarLeitor + id);
+            return RedirectToAction("Index");
         }
 
         public IActionResult Error()

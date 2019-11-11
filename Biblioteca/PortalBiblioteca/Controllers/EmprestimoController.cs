@@ -4,6 +4,7 @@ using PortalBiblioteca.Services.implementacoes;
 using PortalBiblioteca.Services.interfaces;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using static PortalBiblioteca.Utils.Urls.UrlApi;
 
@@ -24,6 +25,13 @@ namespace PortalBiblioteca.Controllers
         {
             var emprestimosDyn = await _service.Get<List<Emprestimo>>(Api.Emprestimo.ListarEmprestimos);
             ViewBag.Message = emprestimosDyn;
+            return View();
+        }
+
+        public async Task<IActionResult> Detail(string id)
+        {
+            var leitorDyn = await _service.Get<Emprestimo>(Api.Emprestimo.ListarEmprestimo + id);
+            ViewBag.Message = leitorDyn;
             return View();
         }
 
@@ -75,6 +83,17 @@ namespace PortalBiblioteca.Controllers
             {
                 return BadRequest($"{e.Message} - {e.InnerException}");
             }
+        }
+
+        public async Task<IActionResult> Delete(string id)
+        {
+            await _service.Delete(Api.Emprestimo.DeletarEmprestimo + id);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

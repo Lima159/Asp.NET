@@ -12,11 +12,11 @@ namespace Biblioteca.Controllers
     [Route("api/[controller]/v{version:apiVersion}")]
     public class LivroController : ControllerBase
     {
-        private ILivroBusiness _livrobusiness;
+        private ILivroBusiness _livroBusiness;
 
-        public LivroController(ILivroBusiness livrobusiness)
+        public LivroController(ILivroBusiness livroBusiness)
         {
-            _livrobusiness = livrobusiness;
+            _livroBusiness = livroBusiness;
         }
 
         #region POST
@@ -28,7 +28,7 @@ namespace Biblioteca.Controllers
                 if (!ModelState.IsValid || obj == null)
                     return BadRequest(ModelState);
 
-                var newlivro = await _livrobusiness.Create(obj);
+                var newlivro = await _livroBusiness.Create(obj);
                 return CreatedAtRoute("GetByIdLivro", new { id = newlivro.Id }, newlivro);
             }
             catch (Exception e)
@@ -47,7 +47,7 @@ namespace Biblioteca.Controllers
                 if (string.IsNullOrEmpty(id))
                     return BadRequest(ModelState);
 
-                var newlivro = await _livrobusiness.FindById(Convert.ToInt32(id));
+                var newlivro = await _livroBusiness.FindById(Convert.ToInt32(id));
                 if (newlivro == null)
                     return NotFound();
 
@@ -64,7 +64,7 @@ namespace Biblioteca.Controllers
         {
             try
             {
-                var newlivros = await _livrobusiness.FindAll();
+                var newlivros = await _livroBusiness.FindAll();
                 return Ok(newlivros);
             }
             catch (Exception e)
@@ -81,7 +81,7 @@ namespace Biblioteca.Controllers
                 if (string.IsNullOrEmpty(titulo))
                     return BadRequest("Titulo não informado");
 
-                var newlivros = await _livrobusiness.FindByTitulo(titulo);
+                var newlivros = await _livroBusiness.FindByTitulo(titulo);
                 if (newlivros == null)
                     return NotFound("Titulo não existente");
                 return Ok(newlivros);
@@ -100,7 +100,7 @@ namespace Biblioteca.Controllers
                 if (string.IsNullOrEmpty(autor))
                     return BadRequest("Autor não informado");
 
-                var newlivros = await _livrobusiness.FindByAutor(autor);
+                var newlivros = await _livroBusiness.FindByAutor(autor);
                 if (newlivros == null)
                     return NotFound("Autor não existente");
                 return Ok(newlivros);
@@ -119,7 +119,7 @@ namespace Biblioteca.Controllers
                 if (string.IsNullOrEmpty(editora))
                     return BadRequest("Editora não informada");
 
-                var newlivros = await _livrobusiness.FindByEditora(editora);
+                var newlivros = await _livroBusiness.FindByEditora(editora);
                 if (newlivros == null)
                     return NotFound("Editora não existente");
                 return Ok(newlivros);
@@ -140,11 +140,11 @@ namespace Biblioteca.Controllers
                 if (obj == null)
                     return BadRequest();
 
-                var newlivro = await _livrobusiness.FindById(obj.Id);
+                var newlivro = await _livroBusiness.FindById(obj.Id);
                 if (newlivro == null)
                     return NotFound();
 
-                var putLivro = await _livrobusiness.Update(obj);
+                var putLivro = await _livroBusiness.Update(obj);
                 return CreatedAtRoute("GetByIdLivro", new { id = putLivro.Id }, putLivro);
             }
             catch (Exception e)
@@ -163,7 +163,7 @@ namespace Biblioteca.Controllers
                 if (string.IsNullOrEmpty(id))
                     return NotFound();
 
-                await _livrobusiness.Delete(Convert.ToInt32(id));
+                await _livroBusiness.Delete(Convert.ToInt32(id));
                 return Ok("Item Deletado");
             }
             catch (Exception e)

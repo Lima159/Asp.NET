@@ -12,11 +12,11 @@ namespace Biblioteca.Controllers
     [Route("api/[controller]/v{version:apiVersion}")]
     public class AutorController : ControllerBase
     {
-        private IAutorBusiness _autorbusiness;
+        private IAutorBusiness _autorBusiness;
 
-        public AutorController(IAutorBusiness autorbusiness)
+        public AutorController(IAutorBusiness autorBusiness)
         {
-            _autorbusiness = autorbusiness;
+            _autorBusiness = autorBusiness;
         }
 
         [HttpPost(Name = "CreateAutor")]
@@ -27,7 +27,7 @@ namespace Biblioteca.Controllers
                 if (!ModelState.IsValid || obj == null)
                     return BadRequest(ModelState);
 
-                var newautor = await _autorbusiness.Create(obj);
+                var newautor = await _autorBusiness.Create(obj);
                 return CreatedAtRoute("GetByIdAutor", new { id = newautor.Id }, newautor);
             }
             catch (Exception e)
@@ -44,7 +44,7 @@ namespace Biblioteca.Controllers
                 if (string.IsNullOrEmpty(id))
                     return BadRequest(ModelState);
 
-                var newautor = await _autorbusiness.FindById(Convert.ToInt32(id));
+                var newautor = await _autorBusiness.FindById(Convert.ToInt32(id));
                 if (newautor == null)
                     return NotFound();
 
@@ -64,11 +64,11 @@ namespace Biblioteca.Controllers
                 if (obj == null)
                     return BadRequest();
 
-                var newautor = await _autorbusiness.FindById(obj.Id);
+                var newautor = await _autorBusiness.FindById(obj.Id);
                 if (newautor == null)
                     return NotFound();
 
-                var putAutor = await _autorbusiness.Update(obj);
+                var putAutor = await _autorBusiness.Update(obj);
                 return CreatedAtRoute("GetByIdAutor", new { id = putAutor.Id }, putAutor);
             }
             catch (Exception e)
@@ -85,7 +85,7 @@ namespace Biblioteca.Controllers
                 if (string.IsNullOrEmpty(id))
                     return NotFound();
 
-                await _autorbusiness.Delete(Convert.ToInt32(id));
+                await _autorBusiness.Delete(Convert.ToInt32(id));
                 return Ok("Item Deletado");
             }
             catch (Exception e)
@@ -99,7 +99,7 @@ namespace Biblioteca.Controllers
         {
             try
             {
-                var newautores = await _autorbusiness.FindAll();
+                var newautores = await _autorBusiness.FindAll();
                 return Ok(newautores);
             }
             catch (Exception e)

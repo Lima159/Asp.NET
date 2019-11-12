@@ -90,10 +90,5 @@ namespace PortalBiblioteca.Controllers
             await _service.Delete(Api.Emprestimo.DeletarEmprestimo + id);
             return RedirectToAction("Index");
         }
-
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
     }
 }

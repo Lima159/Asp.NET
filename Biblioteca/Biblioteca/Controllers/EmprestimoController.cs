@@ -14,9 +14,9 @@ namespace Biblioteca.Controllers
     {
         private IEmprestimoBusiness _emprestimoBusiness;
 
-        public EmprestimoController(IEmprestimoBusiness solicitacaoBusiness)
+        public EmprestimoController(IEmprestimoBusiness emprestimoBusiness)
         {
-            _emprestimoBusiness = solicitacaoBusiness;
+            _emprestimoBusiness = emprestimoBusiness;
         }
 
         #region POST

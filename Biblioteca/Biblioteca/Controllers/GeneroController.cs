@@ -14,9 +14,9 @@ namespace Biblioteca.Controllers
     {
         private IGeneroBusiness _generoBusiness;
 
-        public GeneroController(IGeneroBusiness generobusiness)
+        public GeneroController(IGeneroBusiness generoBusiness)
         {
-            _generoBusiness = generobusiness;
+            _generoBusiness = generoBusiness;
         }
 
         #region POST

@@ -12,11 +12,11 @@ namespace Biblioteca.Controllers
     [Route("api/[controller]/v{version:apiVersion}")]
     public class EditoraController : ControllerBase
     {
-        private IEditoraBusiness _editorabusiness;
+        private IEditoraBusiness _editoraBusiness;
 
-        public EditoraController(IEditoraBusiness editorabusiness)
+        public EditoraController(IEditoraBusiness editoraBusiness)
         {
-            _editorabusiness = editorabusiness;
+            _editoraBusiness = editoraBusiness;
         }
 
         #region POST
@@ -28,7 +28,7 @@ namespace Biblioteca.Controllers
                 if (!ModelState.IsValid || obj == null)
                     return BadRequest(ModelState);
 
-                var neweditora = await _editorabusiness.Create(obj);
+                var neweditora = await _editoraBusiness.Create(obj);
                 return CreatedAtRoute("GetByIdEditora", new { id = neweditora.Id }, neweditora);
             }
             catch (Exception e)
@@ -47,7 +47,7 @@ namespace Biblioteca.Controllers
                 if (string.IsNullOrEmpty(id))
                     return BadRequest(ModelState);
 
-                var neweditora = await _editorabusiness.FindById(Convert.ToInt32(id));
+                var neweditora = await _editoraBusiness.FindById(Convert.ToInt32(id));
                 if (neweditora == null)
                     return NotFound();
 
@@ -64,7 +64,7 @@ namespace Biblioteca.Controllers
         {
             try
             {
-                var neweditoras = await _editorabusiness.FindAll();
+                var neweditoras = await _editoraBusiness.FindAll();
                 return Ok(neweditoras);
             }
             catch (Exception e)
@@ -83,11 +83,11 @@ namespace Biblioteca.Controllers
                 if (obj == null)
                     return BadRequest();
 
-                var neweditora = await _editorabusiness.FindById(obj.Id);
+                var neweditora = await _editoraBusiness.FindById(obj.Id);
                 if (neweditora == null)
                     return NotFound();
 
-                var putEditora = await _editorabusiness.Update(obj);
+                var putEditora = await _editoraBusiness.Update(obj);
                 return CreatedAtRoute("GetByIdEditora", new { id = putEditora.Id }, putEditora);
             }
             catch (Exception e)
@@ -106,7 +106,7 @@ namespace Biblioteca.Controllers
                 if (string.IsNullOrEmpty(id))
                     return NotFound();
 
-                await _editorabusiness.Delete(Convert.ToInt32(id));
+                await _editoraBusiness.Delete(Convert.ToInt32(id));
                 return Ok("Item Deletado");
             }
             catch (Exception e)

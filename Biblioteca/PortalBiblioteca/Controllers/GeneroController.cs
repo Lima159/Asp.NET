@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PortalBiblioteca.Models;
 using PortalBiblioteca.Services.implementacoes;
 using PortalBiblioteca.Services.interfaces;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Threading.Tasks;
 using static PortalBiblioteca.Utils.Urls.UrlApi;
 
 namespace PortalBiblioteca.Controllers
-{    
+{
     public class GeneroController : Controller
     {
         private readonly IGenericHttpService _service;
@@ -87,11 +86,6 @@ namespace PortalBiblioteca.Controllers
         {
             await _service.Delete(Api.Genero.DeletarGenero + id);
             return RedirectToAction("Index");
-        }
-
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

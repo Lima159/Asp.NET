@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace PortalBiblioteca.Models.Base
+﻿namespace PortalBiblioteca.Models.Base
 {
     public class BaseEntity
     {

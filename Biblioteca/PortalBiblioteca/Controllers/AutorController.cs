@@ -27,7 +27,7 @@ namespace PortalBiblioteca.Controllers
             ViewBag.Message = autoresDyn;
             return View();
         }
-        
+
         public async Task<IActionResult> Detail(string id)
         {
             var autorDyn = await _service.Get<Autor>(Api.Autor.ListarAutor + id);
@@ -39,7 +39,7 @@ namespace PortalBiblioteca.Controllers
         {
             try
             {
-                obj.Nome = "HELLO ITS ME"; 
+                obj.Nome = "HELLO ITS ME";
 
                 if (!ModelState.IsValid || obj == null)
                     return BadRequest(ModelState);
@@ -72,16 +72,11 @@ namespace PortalBiblioteca.Controllers
                 return BadRequest($"{e.Message} - {e.InnerException}");
             }
         }
-        
+
         public async Task<IActionResult> Delete(string id)
         {
             await _service.Delete(Api.Autor.DeletarAutor + id);
             return RedirectToAction("Index");
-        }
-
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

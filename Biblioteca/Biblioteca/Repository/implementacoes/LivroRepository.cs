@@ -11,7 +11,6 @@ namespace Biblioteca.Repository.implementacoes
     public class LivroRepository : GenericRepository<Livro>, ILivroRepository
     {
         public LivroRepository(BibliotecaContext context) : base(context) { }
-        //.Include(r => r.Data_Solicitacao)
         public override async Task<Livro> FindById(int id)
         {
             return await _context.Livro

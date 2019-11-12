@@ -95,6 +95,6 @@ namespace PortalBiblioteca.Services.implementacoes
             TratarHeader(header);
             response = await client.DeleteAsync(uri);
             return response.StatusCode;
-        }   
+        }
     }
 }

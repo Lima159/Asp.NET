@@ -12,11 +12,11 @@ namespace Biblioteca.Controllers
     [Route("api/[controller]/v{version:apiVersion}")]
     public class LeitorController : ControllerBase
     {
-        private ILeitorBusiness _leitorbusiness;
+        private ILeitorBusiness _leitorBusiness;
 
-        public LeitorController(ILeitorBusiness leitorbusiness)
+        public LeitorController(ILeitorBusiness leitorBusiness)
         {
-            _leitorbusiness = leitorbusiness;
+            _leitorBusiness = leitorBusiness;
         }
 
         [HttpPost(Name = "CreateLeitor")]
@@ -27,7 +27,7 @@ namespace Biblioteca.Controllers
                 if (!ModelState.IsValid || obj == null)
                     return BadRequest(ModelState);
 
-                var newleitor = await _leitorbusiness.Create(obj);
+                var newleitor = await _leitorBusiness.Create(obj);
                 return CreatedAtRoute("GetByIdLeitor", new { id = newleitor.Id }, newleitor);
             }
             catch (Exception e)
@@ -44,7 +44,7 @@ namespace Biblioteca.Controllers
                 if (string.IsNullOrEmpty(id))
                     return BadRequest(ModelState);
 
-                var newleitor = await _leitorbusiness.FindById(Convert.ToInt32(id));
+                var newleitor = await _leitorBusiness.FindById(Convert.ToInt32(id));
                 if (newleitor == null)
                     return NotFound();
 
@@ -64,11 +64,11 @@ namespace Biblioteca.Controllers
                 if (obj == null)
                     return BadRequest();
 
-                var newleitor = await _leitorbusiness.FindById(obj.Id);
+                var newleitor = await _leitorBusiness.FindById(obj.Id);
                 if (newleitor == null)
                     return NotFound();
 
-                var putLeitor = await _leitorbusiness.Update(obj);
+                var putLeitor = await _leitorBusiness.Update(obj);
                 return CreatedAtRoute("GetByIdLeitor", new { id = putLeitor.Id }, putLeitor);
             }
             catch (Exception e)
@@ -85,7 +85,7 @@ namespace Biblioteca.Controllers
                 if (string.IsNullOrEmpty(id))
                     return NotFound();
 
-                await _leitorbusiness.Delete(Convert.ToInt32(id));
+                await _leitorBusiness.Delete(Convert.ToInt32(id));
                 return Ok("Item Deletado");
             }
             catch (Exception e)
@@ -99,7 +99,7 @@ namespace Biblioteca.Controllers
         {
             try
             {
-                var newleitores = await _leitorbusiness.FindAll();
+                var newleitores = await _leitorBusiness.FindAll();
                 return Ok(newleitores);
             }
             catch (Exception e)

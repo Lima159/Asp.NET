@@ -28,7 +28,7 @@
 
                 public static string EnviarAutor
                 {
-                    get { return partialPath + "";  }
+                    get { return partialPath + ""; }
                 }
 
                 public static string AtualizarAutor
@@ -47,7 +47,7 @@
                 private static string controllerName = "editora";
                 private static string version = "v1";
                 private static string localName = controllerName + "/" + version;
-                private static string partialPath = BASE + "api/" +localName;
+                private static string partialPath = BASE + "api/" + localName;
 
                 public static string ListarEditoras
                 {

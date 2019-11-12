@@ -28,7 +28,7 @@ namespace PortalBiblioteca.Controllers
                 var editoras = await _service.Get<List<Editora>>(Api.Editora.ListarEditoras);
                 ViewBag.Message = editoras;
             }
-            catch(System.Exception e)
+            catch (System.Exception e)
             {
                 Debug.WriteLine(e.Message);
             }
@@ -85,11 +85,6 @@ namespace PortalBiblioteca.Controllers
         {
             await _service.Delete(Api.Editora.DeletarEditora + id);
             return RedirectToAction("Index");
-        }
-
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

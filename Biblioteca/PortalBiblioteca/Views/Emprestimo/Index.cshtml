@@ -30,8 +30,8 @@
             <td>@emprestimos[i].Data_Expiracao</td>
             <td>@emprestimos[i].Data_Devolucao</td>
             <td>
-                <a asp-action="Edit" asp-route-id="@emprestimos[i].Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@emprestimos[i]">Details</a> |
+                <a asp-action="Update" asp-route-id="@emprestimos[i].Id">Edit</a> |
+                <a asp-action="Detail" asp-route-id="@emprestimos[i].Id">Details</a> |
                 <a asp-action="Delete" asp-route-id="@emprestimos[i].Id">Delete</a>
             </td>
         </tr>

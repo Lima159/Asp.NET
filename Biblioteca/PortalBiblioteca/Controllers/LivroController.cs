@@ -65,7 +65,6 @@ namespace PortalBiblioteca.Controllers
         {
             try
             {
-                obj.Id = 11;
                 obj.Titulo = "Squack O Retorno";
                 obj.NumeroPaginas = 250;
                 obj.AutorId = 1;

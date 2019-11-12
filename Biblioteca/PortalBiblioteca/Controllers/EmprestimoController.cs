@@ -63,7 +63,6 @@ namespace PortalBiblioteca.Controllers
         {
             try
             {
-                obj.LivroId = 3;
                 obj.Livro = null;
                 obj.LeitorId = 3;
                 obj.Leitor = null;

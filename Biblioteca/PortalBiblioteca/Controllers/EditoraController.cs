@@ -66,7 +66,6 @@ namespace PortalBiblioteca.Controllers
         {
             try
             {
-                obj.Id = 5;
                 obj.Nome = "Silvestre";
 
                 if (!ModelState.IsValid || obj == null)

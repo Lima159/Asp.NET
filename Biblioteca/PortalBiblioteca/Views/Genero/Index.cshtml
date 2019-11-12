@@ -22,8 +22,8 @@
             <td>@generos[i].Id</td>
             <td>@generos[i].Nome</td>
             <td>
-                <a asp-action="Edit" asp-route-id="@generos[i].Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@generos[i]">Details</a> |
+                <a asp-action="Update" asp-route-id="@generos[i].Id">Edit</a> |
+                <a asp-action="Detail" asp-route-id="@generos[i].Id">Details</a> |
                 <a asp-action="Delete" asp-route-id="@generos[i].Id">Delete</a>
             </td>
         </tr>

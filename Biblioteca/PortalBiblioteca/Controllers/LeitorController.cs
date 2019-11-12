@@ -68,7 +68,6 @@ namespace PortalBiblioteca.Controllers
         {
             try
             {
-                obj.Id = 4;
                 obj.Nome = "Big V";
                 obj.CPF = "123456";
                 obj.DataNascimento = DateTime.Now;

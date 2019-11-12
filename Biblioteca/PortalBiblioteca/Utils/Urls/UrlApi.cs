@@ -191,6 +191,21 @@
                     get { return partialPath + "/emprestimo/"; }
                 }
 
+                public static string ListarEmprestimosDia
+                {
+                    get { return partialPath + "/emprestimosdia/"; }
+                }
+
+                public static string ListarEmprestimosMes
+                {
+                    get { return partialPath + "/emprestimosmes/"; }
+                }
+
+                public static string ListarDevolucaoAtrasadoMes
+                {
+                    get { return partialPath + "/devolucoesatrasadasmes/"; }
+                }
+
                 public static string EnviarEmprestimo
                 {
                     get { return partialPath + ""; }

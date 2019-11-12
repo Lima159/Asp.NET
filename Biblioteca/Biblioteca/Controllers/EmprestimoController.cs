@@ -82,15 +82,15 @@ namespace Biblioteca.Controllers
             }
         }
 
-        [HttpGet("emprestimosdia", Name = "GetEmprestimoDia")]
-        public async Task<IActionResult> GetDia(string data)
+        [HttpGet("emprestimosdia/{dia}", Name = "GetEmprestimoDia")]
+        public async Task<IActionResult> GetDia(string dia)
         {
             try
             {
-                if (string.IsNullOrEmpty(data))
+                if (string.IsNullOrEmpty(dia))
                     return NotFound();
 
-                var contador = await _emprestimoBusiness.GetDia(Convert.ToInt32(data));
+                var contador = await _emprestimoBusiness.GetDia(Convert.ToInt32(dia));
 
                 return Ok(contador);
             }
@@ -100,15 +100,15 @@ namespace Biblioteca.Controllers
             }
         }
 
-        [HttpGet("emprestimosmes", Name = "GetEmprestimoMes")]
-        public async Task<IActionResult> GetMes(string data)
+        [HttpGet("emprestimosmes/{mes}", Name = "GetEmprestimoMes")]
+        public async Task<IActionResult> GetMes(string mes)
         {
             try
             {
-                if (string.IsNullOrEmpty(data))
+                if (string.IsNullOrEmpty(mes))
                     return NotFound();
 
-                var contador = await _emprestimoBusiness.GetMes(Convert.ToInt32(data));
+                var contador = await _emprestimoBusiness.GetMes(Convert.ToInt32(mes));
 
                 return Ok(contador);
             }
@@ -118,15 +118,15 @@ namespace Biblioteca.Controllers
             }
         }
 
-        [HttpGet("devolucoesatrasadasmes", Name = "GetDevolucaoAtrasada")]
-        public async Task<IActionResult> GetDevolucaoAtrasada(string data)
+        [HttpGet("devolucoesatrasadasmes/{mes}", Name = "GetDevolucaoAtrasada")]
+        public async Task<IActionResult> GetDevolucaoAtrasada(string mes)
         {
             try
             {
-                if (string.IsNullOrEmpty(data))
+                if (string.IsNullOrEmpty(mes))
                     return NotFound();
 
-                var contador = await _emprestimoBusiness.GetDevolucaoAtrasada(Convert.ToInt32(data));
+                var contador = await _emprestimoBusiness.GetDevolucaoAtrasada(Convert.ToInt32(mes));
 
                 return Ok(contador);
             }

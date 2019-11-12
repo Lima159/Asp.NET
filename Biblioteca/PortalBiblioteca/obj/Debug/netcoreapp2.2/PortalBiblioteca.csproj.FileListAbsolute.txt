@@ -112,3 +112,6 @@ C:\Users\ialima\source\repos\PortalBiblioteca\Biblioteca\PortalBiblioteca\obj\De
 C:\Users\ialima\source\repos\PortalBiblioteca\Biblioteca\PortalBiblioteca\obj\Debug\netcoreapp2.2\Razor\Views\Emprestimo\Delete.cshtml.g.cs
 C:\Users\ialima\source\repos\PortalBiblioteca\Biblioteca\PortalBiblioteca\obj\Debug\netcoreapp2.2\Razor\Views\Emprestimo\Detail.cshtml.g.cs
 C:\Users\ialima\source\repos\PortalBiblioteca\Biblioteca\PortalBiblioteca\obj\Debug\netcoreapp2.2\Razor\Views\Emprestimo\Update.cshtml.g.cs
+C:\Users\ialima\Source\Repos\PortalBiblioteca\Biblioteca\PortalBiblioteca\obj\Debug\netcoreapp2.2\Razor\Views\Emprestimo\DevolucaoAtrasadoMes.cshtml.g.cs
+C:\Users\ialima\Source\Repos\PortalBiblioteca\Biblioteca\PortalBiblioteca\obj\Debug\netcoreapp2.2\Razor\Views\Emprestimo\EmprestimoDia.cshtml.g.cs
+C:\Users\ialima\Source\Repos\PortalBiblioteca\Biblioteca\PortalBiblioteca\obj\Debug\netcoreapp2.2\Razor\Views\Emprestimo\EmprestimoMes.cshtml.g.cs

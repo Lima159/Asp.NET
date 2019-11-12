@@ -30,8 +30,32 @@ namespace PortalBiblioteca.Controllers
 
         public async Task<IActionResult> Detail(string id)
         {
-            var leitorDyn = await _service.Get<Emprestimo>(Api.Emprestimo.ListarEmprestimo + id);
-            ViewBag.Message = leitorDyn;
+            var emprestimoDyn = await _service.Get<Emprestimo>(Api.Emprestimo.ListarEmprestimo + id);
+            ViewBag.Message = emprestimoDyn;
+            return View();
+        }
+
+        public async Task<IActionResult> EmprestimoDia(string id)
+        {
+            var emprestimoDyn = await _service.Get<int>(Api.Emprestimo.ListarEmprestimosDia + id);
+            ViewBag.Message = emprestimoDyn;
+            ViewBag.Dia = id;
+            return View();
+        }
+
+        public async Task<IActionResult> EmprestimoMes(string id)
+        {
+            var emprestimoDyn = await _service.Get<int>(Api.Emprestimo.ListarEmprestimosMes + id);
+            ViewBag.Message = emprestimoDyn;
+            ViewBag.Mes = id;
+            return View();
+        }
+
+        public async Task<IActionResult> DevolucaoAtrasadoMes(string id)
+        {
+            var emprestimoDyn = await _service.Get<int>(Api.Emprestimo.ListarDevolucaoAtrasadoMes + id);
+            ViewBag.Message = emprestimoDyn;
+            ViewBag.Mes = id;
             return View();
         }
 

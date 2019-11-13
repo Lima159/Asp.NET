@@ -43,12 +43,17 @@ namespace PortalBiblioteca.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
         public async Task<IActionResult> Create(Editora obj)
         {
             try
             {
-                obj.Nome = "Furacao";
-
                 if (!ModelState.IsValid || obj == null)
                     return BadRequest(ModelState);
 

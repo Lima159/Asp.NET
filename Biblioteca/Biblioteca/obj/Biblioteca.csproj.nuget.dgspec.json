@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ialima\\Source\\Repos\\PortalBiblioteca\\Biblioteca\\Biblioteca\\Biblioteca.csproj": {}
+    "C:\\Users\\ialima\\source\\repos\\PortalBiblioteca\\Biblioteca\\Biblioteca\\Biblioteca.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ialima\\Source\\Repos\\PortalBiblioteca\\Biblioteca\\Biblioteca\\Biblioteca.csproj": {
+    "C:\\Users\\ialima\\source\\repos\\PortalBiblioteca\\Biblioteca\\Biblioteca\\Biblioteca.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ialima\\Source\\Repos\\PortalBiblioteca\\Biblioteca\\Biblioteca\\Biblioteca.csproj",
+        "projectUniqueName": "C:\\Users\\ialima\\source\\repos\\PortalBiblioteca\\Biblioteca\\Biblioteca\\Biblioteca.csproj",
         "projectName": "Biblioteca",
-        "projectPath": "C:\\Users\\ialima\\Source\\Repos\\PortalBiblioteca\\Biblioteca\\Biblioteca\\Biblioteca.csproj",
+        "projectPath": "C:\\Users\\ialima\\source\\repos\\PortalBiblioteca\\Biblioteca\\Biblioteca\\Biblioteca.csproj",
         "packagesPath": "C:\\Users\\ialima\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ialima\\Source\\Repos\\PortalBiblioteca\\Biblioteca\\Biblioteca\\obj\\",
+        "outputPath": "C:\\Users\\ialima\\source\\repos\\PortalBiblioteca\\Biblioteca\\Biblioteca\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

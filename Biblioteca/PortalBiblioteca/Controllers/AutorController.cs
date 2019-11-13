@@ -35,12 +35,17 @@ namespace PortalBiblioteca.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
         public async Task<IActionResult> Create(Autor obj)
         {
             try
             {
-                obj.Nome = "HELLO ITS ME";
-
                 if (!ModelState.IsValid || obj == null)
                     return BadRequest(ModelState);
 
@@ -54,11 +59,18 @@ namespace PortalBiblioteca.Controllers
             }
         }
 
+        [HttpGet]
+        public IActionResult Update()
+        {
+            return View();
+        }
+
+        [HttpPut]
         public async Task<IActionResult> Update(Autor obj)
         {
             try
             {
-                obj.Nome = "MAYDAY";
+                //obj.Nome = "MAYDAY";
 
                 if (!ModelState.IsValid || obj == null)
                     return BadRequest(ModelState);

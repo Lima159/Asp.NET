@@ -43,14 +43,17 @@ namespace PortalBiblioteca.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
         public async Task<IActionResult> Create(Leitor obj)
         {
             try
             {
-                obj.Nome = "Itafio";
-                obj.CPF = "9999";
-                obj.DataNascimento = DateTime.Now;
-
                 if (!ModelState.IsValid || obj == null)
                     return BadRequest(ModelState);
 

@@ -26,28 +26,26 @@ namespace PortalBiblioteca.Controllers
             var livrosDyn = await _service.Get<List<Livro>>(Api.Livro.ListarLivros);
             ViewBag.Message = livrosDyn;
             return View();
-        }
+        }                
 
         public async Task<IActionResult> Detail(string id)
         {
             var livroDyn = await _service.Get<Livro>(Api.Livro.ListarLivro + id);
             ViewBag.Message = livroDyn;
             return View();
+        }                
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
         }
 
+        [HttpPost]
         public async Task<IActionResult> Create(Livro obj)
         {
             try
             {
-                obj.Titulo = "Squack";
-                obj.NumeroPaginas = 75;
-                obj.AutorId = 1;
-                obj.Autor = null;
-                obj.EditoraId = 4;
-                obj.Editora = null;
-                obj.GeneroId = 3;
-                obj.Genero = null;
-
                 if (!ModelState.IsValid || obj == null)
                     return BadRequest(ModelState);
 

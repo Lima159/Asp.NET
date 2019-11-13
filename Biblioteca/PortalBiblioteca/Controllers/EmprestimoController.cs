@@ -33,8 +33,8 @@ namespace PortalBiblioteca.Controllers
             var emprestimoDyn = await _service.Get<Emprestimo>(Api.Emprestimo.ListarEmprestimo + id);
             ViewBag.Message = emprestimoDyn;
             return View();
-        }
-
+        }                
+                    
         public async Task<IActionResult> EmprestimoDia(string id)
         {
             var emprestimoDyn = await _service.Get<int>(Api.Emprestimo.ListarEmprestimosDia + id);
@@ -59,16 +59,19 @@ namespace PortalBiblioteca.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
         public async Task<IActionResult> Create(Emprestimo obj)
         {
             try
             {
-                obj.Livro = null;
-                obj.LeitorId = 3;
-                obj.Leitor = null;
-                obj.Data_Emprestimo = DateTime.Now;
-                obj.Data_Expiracao = DateTime.Now;
-                obj.Data_Devolucao = DateTime.Now;
+                //obj.Livro = null;
+                //obj.Leitor = null;
 
                 if (!ModelState.IsValid || obj == null)
                     return BadRequest(ModelState);

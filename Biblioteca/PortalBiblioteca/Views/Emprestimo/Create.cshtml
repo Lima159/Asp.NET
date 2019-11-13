@@ -1,4 +1,24 @@
-﻿@page
-@model PortalBiblioteca.Views.Emprestimo.CreateModel
-@{
-}
+﻿@model PortalBiblioteca.Models.Emprestimo
+
+    <form action="/Emprestimo/Create" method="post">
+        <div>
+            <div>
+                <label>Livro</label>
+                <input asp-for="LivroId" type="text" placeholder="Livro" /> <br />
+                <label>Leitor</label>
+                <input asp-for="LeitorId" type="text" placeholder="Leitor" /><br />
+                <label>Data de emprestimo</label>
+                <input asp-for="Data_Emprestimo" type="datetime-local" /><br />
+                <label>Data de expiração</label>
+                <input asp-for="Data_Expiracao" type="datetime-local" /><br />
+                <label>Data de devolucao</label>
+                <input asp-for="Data_Devolucao" type="datetime-local" /><br />
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    </form>

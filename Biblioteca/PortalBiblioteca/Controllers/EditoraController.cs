@@ -67,12 +67,18 @@ namespace PortalBiblioteca.Controllers
             }
         }
 
+        [HttpGet]
+        public IActionResult Update(int id)
+        {
+            Editora obj = new Editora { Id = id };
+            return View(obj);
+        }
+
+        [HttpPost]
         public async Task<IActionResult> Update(Editora obj)
         {
             try
             {
-                obj.Nome = "Silvestre";
-
                 if (!ModelState.IsValid || obj == null)
                     return BadRequest(ModelState);
 

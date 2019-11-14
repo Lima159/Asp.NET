@@ -60,18 +60,17 @@ namespace PortalBiblioteca.Controllers
         }
 
         [HttpGet]
-        public IActionResult Update()
+        public IActionResult Update(int id)
         {
-            return View();
+            Autor obj = new Autor { Id = id };
+            return View(obj);
         }
 
-        [HttpPut]
+        [HttpPost]
         public async Task<IActionResult> Update(Autor obj)
         {
             try
             {
-                //obj.Nome = "MAYDAY";
-
                 if (!ModelState.IsValid || obj == null)
                     return BadRequest(ModelState);
 

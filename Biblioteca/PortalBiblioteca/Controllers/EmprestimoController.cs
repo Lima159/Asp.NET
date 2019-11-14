@@ -86,19 +86,18 @@ namespace PortalBiblioteca.Controllers
             }
         }
 
+        [HttpGet]
+        public IActionResult Update(int id)
+        {
+            Emprestimo obj = new Emprestimo { Id = id };
+            return View(obj);
+        }
+
+        [HttpPost]
         public async Task<IActionResult> Update(Emprestimo obj)
         {
             try
             {
-                obj.Id = 7;
-                obj.LivroId = 5;
-                obj.Livro = null;
-                obj.LeitorId = 3;
-                obj.Leitor = null;
-                obj.Data_Emprestimo = DateTime.Now;
-                obj.Data_Expiracao = DateTime.Now;
-                obj.Data_Devolucao = DateTime.Now;
-
                 if (!ModelState.IsValid || obj == null)
                     return BadRequest(ModelState);
 

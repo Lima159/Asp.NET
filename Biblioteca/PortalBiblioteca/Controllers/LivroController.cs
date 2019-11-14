@@ -59,19 +59,18 @@ namespace PortalBiblioteca.Controllers
             }
         }
 
+        [HttpGet]
+        public IActionResult Update(int id)
+        {
+            Livro obj = new Livro { Id = id };
+            return View(obj);
+        }
+
+        [HttpPost]
         public async Task<IActionResult> Update(Livro obj)
         {
             try
             {
-                obj.Titulo = "Squack O Retorno";
-                obj.NumeroPaginas = 250;
-                obj.AutorId = 1;
-                obj.Autor = null;
-                obj.EditoraId = 4;
-                obj.Editora = null;
-                obj.GeneroId = 3;
-                obj.Genero = null;
-
                 if (!ModelState.IsValid || obj == null)
                     return BadRequest(ModelState);
 

@@ -70,12 +70,18 @@ namespace PortalBiblioteca.Controllers
             }
         }
 
+        [HttpGet]
+        public IActionResult Update(int id)
+        {
+            Genero obj = new Genero { Id = id };
+            return View(obj);
+        }
+
+        [HttpPost]
         public async Task<IActionResult> Update(Genero obj)
         {
             try
             {
-                obj.Nome = "Drama";
-
                 if (!ModelState.IsValid || obj == null)
                     return BadRequest(ModelState);
 

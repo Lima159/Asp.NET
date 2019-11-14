@@ -67,14 +67,18 @@ namespace PortalBiblioteca.Controllers
             }
         }
 
+        [HttpGet]
+        public IActionResult Update(int id)
+        {
+            Leitor obj = new Leitor { Id = id };
+            return View(obj);
+        }
+
+        [HttpPost]
         public async Task<IActionResult> Update(Leitor obj)
         {
             try
             {
-                obj.Nome = "Big V";
-                obj.CPF = "123456";
-                obj.DataNascimento = DateTime.Now;
-
                 if (!ModelState.IsValid || obj == null)
                     return BadRequest(ModelState);
 

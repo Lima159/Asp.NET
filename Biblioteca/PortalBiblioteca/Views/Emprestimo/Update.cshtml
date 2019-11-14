@@ -1,4 +1,27 @@
-﻿@page
-@model PortalBiblioteca.Views.Emprestimo.UpdateModel
+﻿@model PortalBiblioteca.Models.Emprestimo
 @{
 }
+
+<form action="/Emprestimo/Update/" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div>
+        <div>
+            <label>Livro</label>
+            <input asp-for="LivroId" type="text" /> <br />
+            <label>Leitor</label>
+            <input asp-for="LeitorId" type="text" /> <br />
+            <label>Data de Emprestimo</label>
+            <input asp-for="Data_Emprestimo" type="datetime-local" /> <br />
+            <label>Data de Expiração</label>
+            <input asp-for="Data_Expiracao" type="datetime-local" /> <br />
+            <label>Data de Devolução</label>
+            <input asp-for="Data_Devolucao" type="datetime-local" /> <br />
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Update" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>

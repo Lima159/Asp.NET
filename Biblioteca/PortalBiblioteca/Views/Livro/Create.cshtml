@@ -2,17 +2,25 @@
 
 <form action="/Livro/Create" method="post">
     <div>
-        <div>
+        <div class="form-group">
             <label>Titulo</label>
-            <input asp-for="Titulo" type="text" placeholder="Titulo" /><br />
+            <input asp-for="Titulo" type="text" placeholder="Titulo" />
+        </div>
+        <div class="form-group">
             <label>Número de páginas</label>
-            <input asp-for="NumeroPaginas" type="text" placeholder="NumeroPaginas" /><br />
+            <input asp-for="NumeroPaginas" type="text" placeholder="NumeroPaginas" />
+        </div>
+        <div class="form-group">
             <label>Gênero</label>
-            <input asp-for="GeneroId" type="text" /><br />
+            <input asp-for="GeneroId" type="text" />
+        </div>
+        <div class="form-group">
             <label>Autor</label>
-            <input asp-for="AutorId" type="text" /><br />
+            <input asp-for="AutorId" type="text" />
+        </div>
+        <div class="form-group">
             <label>Editor</label>
-            <input asp-for="EditoraId" type="text" /><br />
+            <input asp-for="EditoraId" type="text" />
         </div>
 
         <div class="form-group">
@@ -20,5 +28,5 @@
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
-    </div>
+        </div>
 </form>

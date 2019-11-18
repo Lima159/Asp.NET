@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using PortalBiblioteca.Models;
 using System.Diagnostics;
+using System.IO;
 
 namespace PortalBiblioteca.Controllers
 {
@@ -8,6 +10,7 @@ namespace PortalBiblioteca.Controllers
     {
         public IActionResult Index()
         {
+            
             return View();
         }
 

@@ -6,7 +6,7 @@
 @{
     var editoras = ViewBag.Message;
 }
-<h1>Index</h1>
+    <h1 align="center" style="color:white;">Editoras</h1>
 
 <a asp-action="Create">Nova Entrada</a>
 
@@ -29,24 +29,3 @@
         </tr>
     }
 </table>
-
-<style>
-    table, td, th {
-        border: 1px solid black;
-    }
-
-    table {
-        border-collapse: collapse;
-        width: 100%;
-    }
-
-    th {
-        background-color: #6699ff;
-        color: white;
-        text-align: left;
-    }
-
-    tr:hover {
-        background-color: #a6a6a6;
-    }
-</style>
